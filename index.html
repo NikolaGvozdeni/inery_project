@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="./images/main_icon.png">
+    <script src="./script.js"></script>
+    <title>Inery Blockchain</title>
+
+</head>
+<body onload="loadData()">
+    <!-- SHOWCASE SECTION -->
+    <section id="showcase">
+        <div class="container">
+            <div class="main-logo">
+                <a href="./index.html"><img src="./images/main-logo-white.svg" alt="logo">
+            </a></div>
+            <div class="showcase-text">
+                <h1>Heading 1</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet cumque vel aut amet assumenda doloribus beatae commodi, quasi praesentium laborum
+                </p>
+            </div>
+            <div class="showcase-buttons">
+                <button class="showcase-btn">Button 1</button>
+                <button class="showcase-btn">Button 2</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Section (section 1) -->
+    <section id="page-1">
+        <div class="container">
+            <!-- Offer section -->
+            <section>
+                <h1>What do we offer?</h1>
+                <div class="offers">
+
+                    <div class="segment">
+                        <img src="./images/eye.svg" alt="">
+                        <h2>Segment 1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam saepe, quisquam culpa iure  
+                        </p>
+                    </div>
+
+                    <div class="segment">
+                        <img src="./images/papers.svg" alt="">
+                        <h2>Segment 1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam saepe, quisquam culpa iure 
+                        </p>
+                    </div>
+
+                    <div class="segment">
+                        <img src="./images/lightbolb.svg" alt="">
+                        <h2>Segment 1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam saepe, quisquam culpa iure 
+                        </p>
+                    </div>
+
+                    <div class="segment">
+                        <img src="./images/hands.svg" alt="">
+                        <h2>Segment 1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam saepe, quisquam culpa iure 
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            <!-- job section -->
+            <section>
+                <h1>Jobs Section</h1>
+                <div class="job-filter-btns" id="job-filter-btns-id">
+                    <button onclick="setFilter(this)" value="all" class="filter-btn active">All</button>
+                    <button onclick="setFilter(this)" value="blockchain" class="filter-btn">Blockchain Development</button>
+                    <button onclick="setFilter(this)" value="front" class="filter-btn">Front-End</button>
+                    <button onclick="setFilter(this)" value="back" class="filter-btn">Back-End</button>
+                </div>
+
+                <div class="job-cards" id="jobs">
+    
+
+                    <!-- From JSONFile ( LIVE SERVER ) -->
+
+                </div>
+                <div class="more-jobs">
+                    <button id="show-more-jobs-id" onclick="moreJobs()">Show all jobs</button>
+                </div>
+            </section>
+            <!-- news letter -->
+            
+        </div>
+        <section class="news-letter">
+                <div class="container">
+                    <div class="sub">
+                        <div>
+                            <h2>
+                                Subscribe to our newsletter
+                                and get notified whenever some
+                                new job positions are open
+                            </h2>
+                        </div>
+                        <div>
+                            <form action="">
+                                <input type="email">
+                                <button>
+                                    <img src="./images/submit-arrow.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </section>
+
+    <!-- job description -->
+    <section id="page-2" class="hide-page">
+        <div class="container">
+            <h1 class="job-title" id="job-title-id"></h1>
+            <div class="job-information">
+                <div class="information">
+                    <div class="basic">
+                        <img src="./images/location.svg" alt="">
+                        <p>Location</p>
+                    </div>
+                    <div class="for-job">
+                        <p id="location-id"></p>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="basic">
+                        <img src="./images/work-time.svg" alt="">
+                        <p>Type</p>
+                    </div>
+                    <div class="for-job">
+                        <p id="worktime-id"></p>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="basic">
+                        <img src="./images/level.svg" alt="">
+                        <p>Level</p>
+                    </div>
+                    <div class="for-job">
+                        <p id="lvl-id"></p>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="basic">
+                        <img src="./images/case.svg" alt="">
+                        <p>Department</p>
+                    </div>
+                    <div class="for-job">
+                        <p id="dep-id"></p>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="basic">
+                        <img src="./images/money.svg" alt="">
+                        <p>Salary</p>
+                    </div>
+                    <div class="for-job">
+                        <p id="salary-id"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <!-- About job description -->
+            <section id="about-job-section-1" >
+                <div class="about-job-title">
+                    <h3>Job Description</h3>
+                    <p><b>Posted on</b>:<span id="posted-on"></span></p>
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit<b> praesent luptatum</b> zzril delenit augue duis <b>dolore te feugait nulla facilisi.</b>  
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                    </p>
+                </div>
+                <div class="job-text">
+                    <h3>Job Description</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+                    </p>
+                    <ul class="list-bullet">
+                        <li>
+                            <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ducimus cum eius necessitatibus accusantium deleniti magni iste qui numquam minus. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ducimus cum eius necessitatibus accusantium deleniti magni iste qui numquam minus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ullam a numquam ex esse neque consectetur nihil assumenda adipisci? Sint. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ducimus cum eius necessitatibus accusantium deleniti magni iste qui numquam minus. 
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="job-text">
+                    <h3>Job Requirements</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+                    </p>
+                    <ul class="list-bullet">
+                        <li>
+                            <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ducimus cum eius necessitatibus accusantium deleniti magni iste qui numquam minus. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ducimus cum eius necessitatibus accusantium deleniti magni iste qui numquam minus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ullam a numquam ex esse neque consectetur nihil assumenda adipisci? Sint. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ducimus cum eius necessitatibus accusantium deleniti magni iste qui numquam minus. 
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <button class="applay-now" id="appl-now-id">applay now</button>
+
+                <div class="similar-jobs-title">
+                    <h3>Similar job offers you might be interested in</h3>
+                </div>
+                <div class="similar-jobs">
+                    <div class="similar-job">
+                        <div class="logo-and-title">
+                            <div class="logo">
+                                <img src="./images/webflow.svg" alt="">
+                            </div>
+                            <div class="text-title">Senior Webflow Designer</div>
+                        </div>
+                        <div class="job-information">
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/location.svg" alt="">
+                                    <p>Location</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Kragujevac</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/level.svg" alt="">
+                                    <p>Level</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Senior</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/case.svg" alt="">
+                                    <p>Department</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Desigh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="similar-job">
+                        <div class="logo-and-title">
+                            <div class="logo">
+                                <img src="./images/javascript.svg" alt="">
+                            </div>
+                            <div class="text-title">Medior Javascript Developer</div>
+                        </div>
+                        <div class="job-information">
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/location.svg" alt="">
+                                    <p>Location</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Remote</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/level.svg" alt="">
+                                    <p>Level</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Medior</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/case.svg" alt="">
+                                    <p>Department</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="similar-job">
+                        <div class="logo-and-title">
+                            <div class="logo">
+                                <img src="./images/webflow.svg" alt="">
+                            </div>
+                            <div class="text-title">Senior Webflow Designer</div>
+                        </div>
+                        <div class="job-information">
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/location.svg" alt="">
+                                    <p>Location</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Kragujevac</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/level.svg" alt="">
+                                    <p>Level</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Senior</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/case.svg" alt="">
+                                    <p>Department</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="similar-job">
+                        <div class="logo-and-title">
+                            <div class="logo">
+                                <img src="./images/javascript.svg" alt="">
+                            </div>
+                            <div class="text-title">Medior Javascript Developer</div>
+                        </div>
+                        <div class="job-information">
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/location.svg" alt="">
+                                    <p>Location</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Remote</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/level.svg" alt="">
+                                    <p>Level</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Medior</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="basic">
+                                    <img src="./images/case.svg" alt="">
+                                    <p>Department</p>
+                                </div>
+                                <div class="for-job">
+                                    <p>Development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-jobs">
+                    <button>View All Jobs We Can Offer</button>
+                </div>
+            </section>
+            <!-- Applay for job form -->
+            <section id="about-job-section-2" class="hide-page">
+                <form id="form" class="applay-for-job-form" action="#">
+                    <h3>Basic information</h3>
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input class="text" type="text" required>
+                        <span style="color: red;">*</span>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input class="text" type="text" required>
+                        <span style="color: red;">*</span>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input class="text" type="email" required>
+                        <span style="color: red;">*</span>
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input class="text" type="text" required>
+                        <span style="color: red;">*</span>
+                    </div>
+                    <div>
+                        <label for="company">Company</label>
+                        <input class="text" type="text">
+                    </div>
+                    <h3>Professional Information</h3>
+                    <div>
+                        <label for="linkedIn">LinkedIN</label>
+                        <input class="text" type="url" required>
+                        <span style="color: red;">*</span>
+                    </div>
+                    <div>
+                        <label for="website">Website</label>
+                        <input class="text" type="url">
+                    </div>
+                    <div>
+                        <label for="twitter">Twitter</label>
+                        <input class="text" type="url">
+                    </div>
+                    <div>
+                        <label for="instagram">Instagram</label>
+                        <input class="text" class="text" type="url">
+                    </div>
+                    <div>
+                        <label for="other">Other URL</label>
+                        <input class="text" type="url">
+                    </div>
+                    <h3>General Q</h3>
+                    <div>
+                        <label for="linkedIn">LinkedIN</label>
+                        <textarea name="" id="" cols="30" rows="10" required></textarea>
+                        <span style="color: red;">*</span>
+                    </div>
+                    <h3>Yes or No Section</h3>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, nesciunt.
+                    </p>
+                    
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <div>
+                        <input type="radio" id="yes" name="yesNo1" value="yes">
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="yesNo1" value="no">
+                        <label for="no">No</label>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <div>
+                        <input type="radio" id="yes" name="yesNo2" value="yes">
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="yesNo2" value="no">
+                        <label for="no">No</label>
+                    </div>
+                    <h3>Resume</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, fuga.</p>
+                    <div>
+                        <label for="cv">CV</label>
+                        <input type="file" name="cv" id="cv">
+                    </div>
+                    <input type="submit" class="applay-now">
+                </form>
+            </section>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="main-footer">
+                <div class="foot-left">
+                    <img src="./images/main-logo-black.svg" alt="">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente necessitatibus officia officiis fuga distinctio, 
+                    </p>
+                </div>
+                <div class="foot-right">
+                    <div class="sec">
+                        <h3>Section 1</h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sec">
+                        <h3>Section 2</h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet        
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet             
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sec">
+                        <h3>Section 3</h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Lorem ipsum dolor sit amet  
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="bot-foot">
+                <div class="bot-foot-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cumque nam inventore   
+                    </p>
+                </div>
+                <div class="bot-foot-icons">
+                    <a href="https://twitter.com/ineryblockchain/status/1443555459890307073?lang=en" target="_blank"><img src="./images/twitter.svg" alt=""></a>
+                    <a href="./index.html"><img src="./images/discord.svg" alt=""></a>
+                    <a href="https://www.instagram.com/inery_blockchain/?hl=en" target="_blank"><img src="./images/instagram.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
